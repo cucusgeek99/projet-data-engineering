@@ -1,0 +1,27 @@
+# --- sbt / build (requis par le sujet : target/, project/target/) ---
+target/
+project/target/
+project/project/
+.bsp/
+
+# --- IDE (requis par le sujet : .idea/) ---
+.idea/
+.vscode/
+.metals/
+.bloop/
+*.iml
+
+# --- Sorties de l'application ---
+output/
+spark-warehouse/
+metastore_db/
+derby.log
+*.log
+
+# --- OS ---
+.DS_Store
+
+# --- Sources de données volumineuses / redondantes ---
+# Les données de travail sont versionnées dans src/main/resources/data/.
+/data/
+/data_groupe3.zip
