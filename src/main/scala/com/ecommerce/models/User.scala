@@ -1,3 +1,11 @@
 package com.ecommerce.models
 
-// TODO (Membre A) - Q2.1 : case class User (schéma users.json).
+case class User (
+  user_id: String,  
+  age: Option[Int],
+  annual_income: Option[Double],
+  city: Option[String],
+  customer_segment: Option[String],
+  preferred_categories: Option[Seq[String]],
+  registration_date: Option[String],
+)

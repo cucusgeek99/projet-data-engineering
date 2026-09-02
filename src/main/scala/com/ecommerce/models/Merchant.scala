@@ -1,3 +1,10 @@
 package com.ecommerce.models
 
-// TODO (Membre A) - Q2.1 : case class Merchant (schéma merchants.csv).
+case class Merchant (
+    merchant_id : String,
+    name : Option[String],
+    category: Option[String],
+    region: Option[String],
+    commission_rate: Option[Double],
+    establishment_date: Option[String]
+)

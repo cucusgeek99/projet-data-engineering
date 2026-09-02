@@ -1,3 +1,11 @@
 package com.ecommerce.models
 
-// TODO (Membre A) - Q2.1 : case class Product (schéma products.parquet).
+case class Product (
+    product_id: String,
+    name: Option[String],
+    category: Option[String],
+    price: Option[Double],
+    merchant_id: String,
+    rating: Option[Double],
+    stock: Option[Int]
+)
