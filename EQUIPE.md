@@ -7,7 +7,7 @@
 
 | Membre | Nom, prénom | E-mail | git config user.name |
 |--------|-------------|--------|----------------------|
-| A | TODO | TODO | TODO |
+| A | ATSUVIA| Marc| marcatsuvia@gmail.com |
 | B | TODO | TODO | TODO |
 | C | TODO | TODO | TODO |
 
