@@ -7,5 +7,5 @@ case class User (
   city: Option[String],
   customer_segment: Option[String],
   preferred_categories: Option[Seq[String]],
-  registration_date: Option[String]
+  registration_date: Option[String],
 )
