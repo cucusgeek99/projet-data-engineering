@@ -44,6 +44,7 @@ class Analytics {
             .na.fill(0.0)
 
         ranked.join(salesByAgeBracket, Seq("merchant_id"), "left")
+            .na.fill(0.0, Seq("Adulte", "Jeune", "Senior", "Âge Moyen"))
     }
         
         def userCohortAnalysis(enrichedTransactions: DataFrame): DataFrame = {
@@ -84,5 +85,42 @@ class Analytics {
         .filter(col("period_index") === 3)
         .orderBy(col("retention_pct").desc)
         .limit(1)
+    }
+
+    // Q4.4 (bonus) : top produits par CA, avec note moyenne et stock.
+    def topProductsByRevenue(enrichedTransactions: DataFrame, topN: Int = 10): DataFrame = {
+        enrichedTransactions
+        .groupBy("product_id", "product_name")
+        .agg(
+            sum("amount").as("total_revenue"),
+            avg("product_rating").as("avg_rating"),
+            first("product_stock").as("stock")
+        )
+        .orderBy(col("total_revenue").desc)
+        .limit(topN)
+    }
+
+    // Q4.4 (bonus) : CA et nb transactions par categorie et region, avec le % que represente chaque categorie dans le total de sa region.
+    def revenueByCategoryAndRegion(enrichedTransactions: DataFrame): DataFrame = {
+        val byCategoryRegion = enrichedTransactions
+        .groupBy("product_category", "merchant_region")
+        .agg(
+            sum("amount").as("total_revenue"),
+            count("transaction_id").as("total_transactions")
+        )
+
+        val revenueByRegion = Window.partitionBy("merchant_region")
+        byCategoryRegion.withColumn(
+            "pct_of_region",
+            round(col("total_revenue") / sum("total_revenue").over(revenueByRegion) * 100, 2)
+        )
+    }
+
+    // Q4.4 (bonus) : repartition du CA par methode de paiement et periode de la journee.
+    def revenueByPaymentAndPeriod(enrichedTransactions: DataFrame): DataFrame = {
+        enrichedTransactions
+        .groupBy("payment_method", "day_period")
+        .agg(sum("amount").as("total_revenue"))
+        .orderBy("payment_method", "day_period")
     }
 }
