@@ -85,7 +85,7 @@ class DataTransformation {
     val trailing7d = Window
         .partitionBy("user_id")
         .orderBy(col("tx_ts").cast("long"))
-        .rangeBetween(-SECONDS_IN_7_DAYS, 0)
+        .rangeBetween(-SECONDS_IN_SEVEN_DAYS, 0)
 
     val lagWindow = Window.partitionBy("user_id").orderBy("tx_ts")
 
