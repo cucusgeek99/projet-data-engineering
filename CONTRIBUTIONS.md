@@ -1,6 +1,6 @@
 # CONTRIBUTIONS
 
-## 1. Question → responsable → relecteur
+## 1. Question -> responsable -> relecteur
 
 | Question | Responsable | Relecteur | Statut |
 |----------|-------------|-----------|--------|
