@@ -29,4 +29,5 @@
 
 | Date | Module | Auteur | Relecteur | Remarques |
 |------|--------|--------|-----------|-----------|
-| TODO | | | | |
+| 02/09/2026 | Partie 2 (models/User.scala) | A | B | Virgule finale en trop au niveau du case class retirée |
+| 04/09/2026 | Partie 2 (DataIngestion / DataValidation) | A | B | Q2.2 et Q2.4 étaient ok mais Q.3 manquait (try-catch + comptage) |
