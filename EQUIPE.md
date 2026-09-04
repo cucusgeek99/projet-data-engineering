@@ -1,15 +1,12 @@
 # EQUIPE
 
-> Remplacer chaque `TODO`. Le `git config user.name` doit correspondre
-> exactement au nom affiché dans `git log`.
-
 ## Membres
 
 | Membre | Nom, prénom | E-mail | git config user.name |
 |--------|-------------|--------|----------------------|
 | A | ATSUVIA| Marc| marcatsuvia@gmail.com |
 | B | Klaus BONOU SELEGBE | bignonbosel@gmail.com | iamklaus01 |
-| C | TODO | TODO | TODO |
+| C | CHERIF |Sadat | -- |
 
 ## Rôles et questions traitées
 
