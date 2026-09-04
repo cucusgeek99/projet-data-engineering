@@ -83,6 +83,10 @@ object MainApp {
       val merchantReport = analytics.merchantKpis(withBehaviorPersisted)
       val cohortRetention = analytics.userCohortAnalysis(withBehaviorPersisted)
       val bestCohort = analytics.bestCohortAt3Months(cohortRetention)
+      val topProducts = analytics.topProductsByRevenue(withBehaviorPersisted)
+      val revenueByCatRegion = analytics.revenueByCategoryAndRegion(withBehaviorPersisted)
+      val revenueByPayPeriod = analytics.revenueByPaymentAndPeriod(withBehaviorPersisted)
+
 
       println("\n=== KPI PAR MARCHAND (top 20 par chiffre d'affaires) ===")
       merchantReport.orderBy(desc("total_revenue")).show(20, truncate = false)
@@ -93,11 +97,21 @@ object MainApp {
       println("\n=== MEILLEURE COHORTE A 3 MOIS ===")
       bestCohort.show(false)
 
+      println("\n=== TOP 10 PRODUITS PAR CA (bonus 4.4) ===")
+      topProducts.show(false)
+      println("\n=== CA PAR CATEGORIE ET REGION (bonus 4.4) ===")
+      revenueByCatRegion.show(50, truncate = false)
+      println("\n=== CA PAR METHODE DE PAIEMENT ET PERIODE (bonus 4.4) ===")
+      revenueByPayPeriod.show(false)
+
       // ------------------------------------------------------------ 5. Écriture des résultats
       writeCsvAndParquet(withBehaviorPersisted, s"$outputPath/enriched_transactions")
       writeCsvAndParquet(merchantReport, s"$outputPath/merchant_report")
       writeCsvAndParquet(cohortRetention, s"$outputPath/cohort_retention")
       writeCsvAndParquet(bestCohort, s"$outputPath/best_cohort")
+      writeCsvAndParquet(topProducts, s"$outputPath/top_products")
+      writeCsvAndParquet(revenueByCatRegion, s"$outputPath/revenue_by_category_region")
+      writeCsvAndParquet(revenueByPayPeriod, s"$outputPath/revenue_by_payment_period")
 
       SparkOptimizations.release(enrichedCached)
       SparkOptimizations.release(withBehaviorPersisted)
