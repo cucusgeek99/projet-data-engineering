@@ -8,7 +8,7 @@
 | Membre | Nom, prénom | E-mail | git config user.name |
 |--------|-------------|--------|----------------------|
 | A | ATSUVIA| Marc| marcatsuvia@gmail.com |
-| B | TODO | TODO | TODO |
+| B | Klaus BONOU SELEGBE | bignonbosel@gmail.com | iamklaus01 |
 | C | TODO | TODO | TODO |
 
 ## Rôles et questions traitées
