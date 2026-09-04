@@ -13,9 +13,9 @@
 
 ## 2. Charge de travail et difficultés (par membre)
 
-- **Membre A** — heures :15h . Difficultés : Travailler avec une pipeline et une architecture bien definie .
-- **Membre B** — heures : 9h. Difficultés : Première fois que j'écrivais vraiment du code Scala(j'arrivais difficlement àsuivre tous les ocurs et surtout à pratiquer), il a fallu du temps pour comprendre le fonctionnement des UDF et des window functions . Je me suis appuyé sur l'aide de l'IA pour accélérer l'apprentissage aussi...
-- **Membre C** — heures : 0h à ce jour (04/09/2026). Difficultés : aucune contribution reçue ;
+- **Membre A**  :15h . Difficultés : Travailler avec une pipeline et une architecture bien definie .
+- **Membre B** : 12h. Difficultés : Première fois que j'écrivais vraiment du code Scala(j'arrivais difficlement àsuivre tous les ocurs et surtout à pratiquer), il a fallu du temps pour comprendre le fonctionnement des UDF et des window functions . Je me suis appuyé sur l'aide de l'IA pour accélérer l'apprentissage aussi...
+- **Membre C** : 0h à ce jour (04/09/2026). Difficultés : aucune contribution reçue ;
   Parties 4, 5 et 6 réalisées par B et A pour permettre la livraison du tronc commun.
 
 ## 3. Décisions techniques du groupe (min. 5, à justifier)
