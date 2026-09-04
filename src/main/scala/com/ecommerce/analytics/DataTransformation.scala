@@ -78,4 +78,32 @@ class DataTransformation {
         .otherwise("Senior")
     )
   }
+
+    def addBehaviorFeatures(df: DataFrame): DataFrame = {
+
+    // Fenêtre des 7 derniers jours par utilisateur
+    val trailing7d = Window
+        .partitionBy("user_id")
+        .orderBy(col("tx_ts").cast("long"))
+        .rangeBetween(-SECONDS_IN_7_DAYS, 0)
+
+    val lagWindow = Window.partitionBy("user_id").orderBy("tx_ts")
+
+    // total des transactions sur les 7 derniers jours
+    val withRollingAmount = df
+        .withColumn("rolling_7d_amount", sum("amount").over(trailing7d))
+
+    // users actifs
+    val withActiveFlag = withRollingAmount
+        .withColumn("tx_date", to_date(col("tx_ts")))
+        .withColumn("distinct_active_days_7d", size(collect_set(col("tx_date")).over(trailing7d)))
+        .withColumn("is_active_user", when(col("distinct_active_days_7d") >= 5, 1).otherwise(0))
+        .drop("tx_date", "distinct_active_days_7d")
+
+    // nombre de jours depuis le dernier achat
+    withActiveFlag
+        .withColumn("previous_tx_ts", lag(col("tx_ts"), 1).over(lagWindow))
+        .withColumn("days_since_previous_purchase", datediff(col("tx_ts"), col("previous_tx_ts")))
+        .drop("previous_tx_ts")
+    }
 }
