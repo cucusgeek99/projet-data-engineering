@@ -7,15 +7,16 @@
 | Partie 1 (structure, build.sbt, README) | A | C | Arborescence en place |
 | Partie 2 (ingestion, validation, rapport qualité) | A | B | Fait |
 | Partie 3 (UDF, enrichissement, fenêtrage) | B | A | À faire |
-| Partie 4 (KPI marchands, cohortes) | C | B | À faire |
-| Parties 5 & 6 (optimisations, MainApp) | C | A, B | À faire |
-| Partie 7 (application.conf) | A | C | Squelette en place |
+| Partie 4 (KPI marchands, cohortes) | C | B | Fait par B en l'absence de contribution de C |
+| Parties 5 & 6 (optimisations, MainApp) | C | A, B | SparkOptimizations fait par B (absence de C) ; MainApp (Q6.1) écrit par A pour débloquer l'intégration |
+| Partie 7 (application.conf) | A | C | Fait |
 
 ## 2. Charge de travail et difficultés (par membre)
 
-- **Membre A** — heures : TODO. Difficultés : TODO.
+- **Membre A** — heures :15h . Difficultés : Travailler avec une pipeline et une architecture bien definie .
 - **Membre B** — heures : 9h. Difficultés : Première fois que j'écrivais vraiment du code Scala(j'arrivais difficlement àsuivre tous les ocurs et surtout à pratiquer), il a fallu du temps pour comprendre le fonctionnement des UDF et des window functions . Je me suis appuyé sur l'aide de l'IA pour accélérer l'apprentissage aussi...
-- **Membre C** — heures : TODO. Difficultés : TODO.
+- **Membre C** — heures : 0h à ce jour (04/09/2026). Difficultés : aucune contribution reçue ;
+  Parties 4, 5 et 6 réalisées par B et A pour permettre la livraison du tronc commun.
 
 ## 3. Décisions techniques du groupe (min. 5, à justifier)
 
@@ -59,3 +60,6 @@
 |------|--------|--------|-----------|-----------|
 | 02/09/2026 | Partie 2 (models/User.scala) | A | B | Virgule finale en trop au niveau du case class retirée |
 | 04/09/2026 | Partie 2 (DataIngestion / DataValidation) | A | B | Q2.2 et Q2.4 étaient ok mais Q.3 manquait (try-catch + comptage) |
+| 04/09/2026 | Partie 3 (TimeFeatures.scala, DataTransformation.scala) | B | A | Logique conforme, testée (10 tests + run complet). Note : day_of_week/month en anglais (choix assumé) ; la Q2.2 ne valide que la longueur du timestamp, pas sa validité calendaire (limite héritée du sujet, pas un bug) |
+| 04/09/2026 | Parties 4/5 (Analytics.scala, SparkOptimizations.scala) | B (pour C, absent) | A | Bug réel trouvé et quantifié : 3/843 marchands ont NULL au lieu de 0.0 dans les colonnes de tranche d'âge (merchantKpis) quand toutes leurs transactions ont un age_bracket null — correctif à une ligne identifié  |
+
