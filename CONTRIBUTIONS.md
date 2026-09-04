@@ -5,7 +5,7 @@
 | Question | Responsable | Relecteur | Statut |
 |----------|-------------|-----------|--------|
 | Partie 1 (structure, build.sbt, README) | A | C | Arborescence en place |
-| Partie 2 (ingestion, validation, rapport qualité) | A | B | Fait, une correction apportée à User.sclala |
+| Partie 2 (ingestion, validation, rapport qualité) | A | B | Fait |
 | Partie 3 (UDF, enrichissement, fenêtrage) | B | A | À faire |
 | Partie 4 (KPI marchands, cohortes) | C | B | À faire |
 | Parties 5 & 6 (optimisations, MainApp) | C | A, B | À faire |
