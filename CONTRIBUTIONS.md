@@ -13,9 +13,9 @@
 
 ## 2. Charge de travail et difficultés (par membre)
 
-- **Membre A** — heures : TODO. Difficultés : TODO.
-- **Membre B** — heures : 9h. Difficultés : Première fois que j'écrivais vraiment du code Scala(j'arrivais difficlement àsuivre tous les ocurs et surtout à pratiquer), il a fallu du temps pour comprendre le fonctionnement des UDF et des window functions . Je me suis appuyé sur l'aide de l'IA pour accélérer l'apprentissage aussi...
-- **Membre C** — heures : TODO. Difficultés : TODO.
+- **Membre A**  : --. Difficultés : --.
+- **Membre B**  : 12h. Difficultés : Première fois que j'écrivais vraiment du code Scala(j'arrivais difficlement àsuivre tous les ocurs et surtout à pratiquer), il a fallu du temps pour comprendre le fonctionnement des UDF et des window functions . Je me suis appuyé sur l'aide de l'IA pour accélérer l'apprentissage aussi...
+- **Membre C**  : -- . Difficultés : --.
 
 ## 3. Décisions techniques du groupe (min. 5, à justifier)
 
