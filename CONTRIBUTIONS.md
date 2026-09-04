@@ -58,8 +58,7 @@
 
 | Date | Module | Auteur | Relecteur | Remarques |
 |------|--------|--------|-----------|-----------|
-| 02/09/2026 | Partie 2 (models/User.scala) | A | B | Virgule finale en trop au niveau du case class retirée |
-| 04/09/2026 | Partie 2 (DataIngestion / DataValidation) | A | B | Q2.2 et Q2.4 étaient ok mais Q.3 manquait (try-catch + comptage) |
+| 04/09/2026 | Partie 2 (models/User.scala) | A | B | Virgule finale en trop au niveau du case class retirée |
 | 04/09/2026 | Partie 3 (TimeFeatures.scala, DataTransformation.scala) | B | A | Logique conforme, testée (10 tests + run complet). Note : day_of_week/month en anglais (choix assumé) ; la Q2.2 ne valide que la longueur du timestamp, pas sa validité calendaire (limite héritée du sujet, pas un bug) |
 | 04/09/2026 | Parties 4/5 (Analytics.scala, SparkOptimizations.scala) | B (pour C, absent) | A | Bug réel trouvé et quantifié : 3/843 marchands ont NULL au lieu de 0.0 dans les colonnes de tranche d'âge (merchantKpis) quand toutes leurs transactions ont un age_bracket null — correctif à une ligne identifié  |
 
